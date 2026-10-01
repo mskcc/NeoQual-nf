@@ -26,9 +26,12 @@ process PHYLOWGS_MULTIEVOLVEGO {
     script:
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
+    // params.phylowgs_go_bin: optional absolute path to a phylowgs-go binary to use instead of the one baked into
+    // the container (testing a build without publishing an image; the path must be visible inside the container)
+    def go_bin = params.phylowgs_go_bin ?: 'phylowgs-go'
 
     """
-    phylowgs-go \\
+    ${go_bin} \\
         ${args} \\
         -O chains \\
         -D ${prefix} \\

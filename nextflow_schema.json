@@ -116,6 +116,11 @@
                     "description": "Which PhyloWGS MCMC implementation to run: 'python' (original C++/Python, default), 'go' (phylowgs-go only), or 'both' (run both; Go results also emitted separately as go_summ/go_muts/go_mutass for comparison against the Python/C++ path).",
                     "fa_icon": "fas fa-code-branch"
                 },
+                "phylowgs_go_bin": {
+                    "type": "string",
+                    "description": "Optional absolute path to a phylowgs-go binary to run instead of the container's copy (for testing a build; path must be visible inside the container).",
+                    "fa_icon": "fas fa-file-code"
+                },
                 "mutalyzer_cache_dir": {
                     "type": "string",
                     "description": "Directory for caching Mutalyzer reference data.",
